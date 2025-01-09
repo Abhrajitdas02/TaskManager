@@ -3,6 +3,7 @@ import { useAuth } from './AuthContext';
 import BrowserNotificationService from '../services/browserNotificationService';
 import io from 'socket.io-client';
 import ToastContainer from '../components/ToastContainer';
+import config from '../config/config.js';
 
 const NotificationContext = createContext();
 
@@ -17,7 +18,7 @@ export const NotificationProvider = ({ children }) => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/tasks', {
+      const response = await fetch(`${config.API_URL}/api/tasks`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -156,8 +157,8 @@ export const NotificationProvider = ({ children }) => {
         // Set up periodic checks every minute
         const checkInterval = setInterval(checkUpcomingTasks, 60000);
 
-        // Initialize socket connection
-        const newSocket = io('http://localhost:5000', {
+        // Initialize socket connection with deployed URL
+        const newSocket = io(config.SOCKET_URL, {
           reconnection: true,
           reconnectionAttempts: 5,
           reconnectionDelay: 1000,

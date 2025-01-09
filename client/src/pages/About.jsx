@@ -10,21 +10,7 @@ export default function About() {
           </h1>
           <div className='text-md text-gray-500 flex flex-col gap-6'>
             <p>
-              Welcome to BlogPost! This project was created by Abhrajit Das and
-              Sayantan Sen.
-            </p>
-
-            <p>
-              We are Building a blog with the MERN stack is a cool project that combines
-              MongoDB, Express.js, React.js, and Node.js.
-            </p>
-
-            <p>
-              With MongoDB, you can store all your blog posts and user data easily. Express.js
-              handles the backend, making it simple to manage routes and server-side logic. React.js
-              takes care of the frontend, giving you a smooth, dynamic user interface to create, edit
-              and display your blog posts. Node.js ties it all together, running JavaScript on the server.
-              This stack is great for creating a fast, scalable, and interactive blog platform.
+              Welcome to About page of Task Manager!!
             </p>
           </div>
         </div>
