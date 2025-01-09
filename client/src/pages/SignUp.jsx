@@ -20,7 +20,7 @@ const SignUp = () => {
       setError(null);
 
       // First create the user
-      const signupRes = await fetch('http://localhost:5000/api/auth/signup', {
+      const signupRes = await fetch('http://https://taskmanager-9aik.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const SignUp = () => {
       }
 
       // If signup successful, automatically sign in
-      const signinRes = await fetch('http://localhost:5000/api/auth/signin', {
+      const signinRes = await fetch('http://https://taskmanager-9aik.onrender.com/api/auth/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

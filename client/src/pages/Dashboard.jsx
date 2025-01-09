@@ -39,7 +39,7 @@ const Dashboard = () => {
         return;
       }
 
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch('http://https://taskmanager-9aik.onrender.com/api/tasks', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -97,7 +97,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
       if (!token) return false;
 
-      const res = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+      const res = await fetch(`http://https://taskmanager-9aik.onrender.com/api/tasks/${taskId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -188,7 +188,7 @@ const Dashboard = () => {
         return;
       }
 
-      const res = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+      const res = await fetch(`http://https://taskmanager-9aik.onrender.com/api/tasks/${taskId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

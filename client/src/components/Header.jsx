@@ -10,7 +10,7 @@ const Header = () => {
 
   const handleSignOut = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/auth/signout', {
+      const res = await fetch('http://https://taskmanager-9aik.onrender.com/api/auth/signout', {
         method: 'POST',
         credentials: 'include',
       });
