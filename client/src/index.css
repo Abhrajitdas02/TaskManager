@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Calendar customization */
+.fc {
+  --fc-border-color: theme('colors.gray.200');
+  --fc-button-bg-color: theme('colors.purple.600');
+  --fc-button-border-color: theme('colors.purple.600');
+  --fc-button-hover-bg-color: theme('colors.purple.700');
+  --fc-button-hover-border-color: theme('colors.purple.700');
+  --fc-button-active-bg-color: theme('colors.purple.800');
+  --fc-button-active-border-color: theme('colors.purple.800');
+}
+
+.dark .fc {
+  --fc-border-color: theme('colors.gray.700');
+  --fc-button-text-color: theme('colors.white');
+  --fc-page-bg-color: theme('colors.gray.800');
+  --fc-neutral-bg-color: theme('colors.gray.700');
+  --fc-neutral-text-color: theme('colors.gray.300');
+  --fc-today-bg-color: theme('colors.purple.900/20');
+}
+
+.fc .fc-button {
+  @apply shadow-sm text-white;
+}
+
+.fc .fc-toolbar-title {
+  @apply text-gray-900 dark:text-white;
+}
+
+.fc .fc-daygrid-day-number {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.fc .fc-event {
+  @apply cursor-pointer transition-opacity hover:opacity-80;
+}
+
+.fc-event {
+  @apply transition-all duration-300;
+}
+
+.overdue-task {
+  @apply border-l-4 border-l-red-600;
+}
+
+.high-priority-task {
+  @apply border-l-4 border-l-amber-600;
+}
+
+.completed-task {
+  @apply opacity-75;
+}
+
+.fc-event:hover {
+  @apply transform scale-105 shadow-lg z-10;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .7;
+  }
+}
+
+.fc-daygrid-event {
+  @apply rounded-md shadow-sm !important;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  @apply bg-purple-50 dark:bg-purple-900/20 !important;
+}
+
+.fc .fc-button-primary {
+  @apply transition-colors duration-200 !important;
+}
+
+.fc .fc-button-primary:not(:disabled):hover {
+  @apply bg-purple-700 border-purple-700 !important;
+}
+
+/* Add to your existing calendar styles */
+.upcoming-task {
+  @apply border-l-4 border-l-purple-600;
+}
+
+.today-task {
+  @apply border-l-4 border-l-blue-600;
+}
+
+/* Enhance the calendar day styling */
+.fc .fc-daygrid-day.fc-day-future {
+  @apply bg-purple-50/30 dark:bg-purple-900/10 !important;
+}
+
+.fc .fc-daygrid-day.fc-day-past {
+  @apply bg-gray-50/30 dark:bg-gray-900/10 !important;
+}
+
+/* Add hover effect to days */
+.fc .fc-daygrid-day:hover {
+  @apply bg-gray-100 dark:bg-gray-700/50 transition-colors duration-200 !important;
+}
+
+/* Add these to your existing calendar styles */
+
+/* Improve calendar scrolling */
+.calendar-container {
+  min-height: auto;
+}
+
+/* Style the "more" popover */
+.fc-popover {
+  @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg !important;
+}
+
+.fc-popover-header {
+  @apply bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-t-lg !important;
+}
+
+.fc-popover-body {
+  @apply p-2 !important;
+}
+
+/* Improve mobile responsiveness */
+@media (max-width: 640px) {
+  .fc .fc-toolbar {
+    @apply flex-col gap-2 !important;
+  }
+
+  .fc .fc-toolbar-title {
+    @apply text-lg !important;
+  }
+
+  .fc .fc-button {
+    @apply text-sm px-2 py-1 !important;
+  }
+}
+
+/* Smooth scrolling */
+.calendar-container {
+  @apply scroll-smooth;
+}
+
+/* Style the outer scrollbar */
+.bg-white.dark\:bg-gray-800::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.bg-white.dark\:bg-gray-800::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-700;
+}
+
+.bg-white.dark\:bg-gray-800::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors;
+}
+
+/* Keep the header visible when scrolling */
+.fc .fc-toolbar.fc-header-toolbar {
+  @apply sticky top-0 bg-white dark:bg-gray-800 z-10 mb-4 !important;
+}
+
+/* Ensure proper spacing */
+.fc {
+  @apply h-full;
+}
+
+.fc-view-harness {
+  @apply h-auto !important;
+}
+
+/* Improve popover positioning */
+.fc-popover {
+  @apply z-50 !important;
+}
